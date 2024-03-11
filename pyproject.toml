@@ -1,0 +1,6 @@
+[tool.pyright]
+stubPath = ".vscode/Pico-W-Stub/"
+
+#reportMissingImports = true
+#reportMissingTypeStubs = false
+reportMissingModuleSource = false
