@@ -1,10 +1,3 @@
-## DRV8833
-
-Pure MicroPython driver for the DRV8833 motor driver (intended for [Adafruit's model](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-drv8833-dc-stepper-motor-driver-breakout-board.pdf), but should work with any).
-
-Example usage (tested with an RPI Pico):
-
-```python
 from machine import Pin, PWM
 from drv8833 import DRV8833
 from time import sleep
@@ -36,5 +29,4 @@ drv.stop_a()
 drv.stop_b()
 
 # Will be called automatically when DRV8833 object leaves scope, but can be called manually
-drv.deinit()
-```
+#drv.deinit()
