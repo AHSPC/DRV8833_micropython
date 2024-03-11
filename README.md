@@ -1,6 +1,6 @@
 ## DRV8833
 
-Pure MicroPython driver for the DRV8833 motor driver (intended for Adafruit's model, but should work with any).
+Pure MicroPython driver for the DRV8833 motor driver (intended for [Adafruit's model](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-drv8833-dc-stepper-motor-driver-breakout-board.pdf), but should work with any).
 
 Example usage:
 
