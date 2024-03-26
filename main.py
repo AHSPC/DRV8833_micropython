@@ -2,6 +2,10 @@ from machine import Pin, PWM
 from drv8833 import DRV8833
 from time import sleep
 
+Pin("LED").on()
+sleep(1)
+Pin("LED").off()
+
 # NOTE: feel free to play with the frequency value! The frequency (how many PWM cycles per second
 # sent to the DRV pins) changes the behavior of the connected motors; notable, it changes the motors'
 # behavior at low throttle values. We recommend values no lower than 1,000 and no higher than 200,000.
