@@ -10,10 +10,14 @@ from time import sleep
 frequency = 20_000
 
 # Make sure to set the correct pins!
-ain1 = PWM(Pin(0, Pin.OUT), freq=frequency)
-ain2 = PWM(Pin(1, Pin.OUT), freq=frequency)
-bin1 = PWM(Pin(2, Pin.OUT), freq=frequency)
-bin2 = PWM(Pin(3, Pin.OUT), freq=frequency)
+ain1 = PWM(Pin(0, Pin.OUT))
+ain2 = PWM(Pin(1, Pin.OUT))
+bin1 = PWM(Pin(2, Pin.OUT))
+bin2 = PWM(Pin(3, Pin.OUT))
+ain1.freq(frequency)
+ain2.freq(frequency)
+bin1.freq(frequency)
+bin2.freq(frequency)
 
 drv = DRV8833(ain1, ain2, bin1, bin2)
 
@@ -24,9 +28,9 @@ while throttle > -1.0:
     sleep(0.1)
     throttle -= 0.05
     print(throttle)
-    
+
 drv.stop_a()
 drv.stop_b()
 
 # Will be called automatically when DRV8833 object leaves scope, but can be called manually
-#drv.deinit()
+# drv.deinit()
