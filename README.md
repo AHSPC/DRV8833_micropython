@@ -16,8 +16,7 @@ Pin("LED").off()
 # NOTE: feel free to play with the frequency value! The frequency (how many PWM cycles per second
 # sent to the DRV pins) changes the behavior of the connected motors; notable, it changes the motors'
 # behavior at low throttle values. We recommend values no lower than 1,000 and no higher than 200,000.
-# 40,000 is a good default.
-# The lower the value, the slower the motor seems
+# 10,000 is a good default.
 frequency = 40_000
 
 # Make sure to set the correct pins!
