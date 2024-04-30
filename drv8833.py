@@ -23,11 +23,17 @@ class DRV8833:
     def throttle_b(self, throttle: float, decay_mode: int = SLOW_DECAY):
         self.__throttle(self.motor_b_in_1, self.motor_b_in_2, throttle, decay_mode)
 
-    def stop_a(self):
-        self.__stop(self.motor_a_in_1, self.motor_a_in_2)
+    def stop_a(self, hard: bool = False):
+        if hard:
+            self.throttle_a(0.0)
+        else:
+            self.__stop(self.motor_a_in_1, self.motor_a_in_2)
 
-    def stop_b(self):
-        self.__stop(self.motor_b_in_1, self.motor_b_in_2)
+    def stop_b(self, hard: bool = False):
+        if hard:
+            self.throttle_b(0.0)
+        else:
+            self.__stop(self.motor_b_in_1, self.motor_b_in_2)
 
     def deinit(self):
         self.stop_a()
@@ -58,11 +64,11 @@ class DRV8833:
                 pin2.duty_u16(self.MAX_DUTY_CYCLE - duty_cycle)
         elif decay_mode == self.FAST_DECAY:
             if 0 < throttle <= 1:
-                pin1.duty_u16(duty_cycle)
-                pin2.duty_u16(self.MIN_DUTY_CYCLE)
-            elif -1 <= throttle < 0:
                 pin1.duty_u16(self.MIN_DUTY_CYCLE)
                 pin2.duty_u16(duty_cycle)
+            elif -1 <= throttle < 0:
+                pin1.duty_u16(duty_cycle)
+                pin2.duty_u16(self.MIN_DUTY_CYCLE)
         else:
             raise ValueError(
                 "decay_mode must be one of either FAST_DECAY or SLOW_DECAY!"
