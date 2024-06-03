@@ -42,6 +42,6 @@ while throttle > -1.0:
 drv.stop_a()
 drv.stop_b()
 
-# Will be called automatically when DRV8833 object leaves scope, but can be called manually
+# This will be called automatically when DRV8833 object leaves scope, but can be called manually if you want
 # drv.deinit()
 ```

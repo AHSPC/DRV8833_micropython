@@ -5,11 +5,10 @@ class DRV8833:
     """
     Basic helper class to manipulate the DRV8833 dual motor controller.
     Partially based on adafruit's adafruit_motor library, but with custom
-    decisions made for our usecases. NOTE: this helper does not currently
-    support both stopping methods (high-z and low-z), but only uses low-z.
-    Note about throttle()'s decay_mode parameter: SLOW_DECAY is recommended
-    to improve spin threshold, speed-to-throttle linearity, and PWM
-    frequency sensitivity. We use this as the default.
+    decisions made for our usecases. Note about throttle()'s decay_mode
+    parameter: SLOW_DECAY is recommended to improve spin threshold,
+    speed-to-throttle linearity, and PWM frequency sensitivity. We use
+    this as the default.
     """
 
     FAST_DECAY = 0
